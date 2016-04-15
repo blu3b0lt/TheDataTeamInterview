@@ -1,0 +1,6 @@
+1. More CPU cycles won't matter as script is single threaded.
+2. More number of CPUs can help if we split the input dictionary file in multiple parts and give it to each CPU
+3. More memory will help if dictionary size is too large.
+4. Parallize wont lead to any contention
+6. Faster disks will be needed to do faster input reading
+7. 
