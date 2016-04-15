@@ -16,7 +16,6 @@ def load_dict(filename):
 
 
 synon = load_dict("synon.b")
-anton = load_dict("anto.b")
 
 
 # read input file
@@ -42,13 +41,18 @@ for para in paras:
 	lines = para.split(".")
 	for line in lines:
 		if len(line) > 0:
-			print "Line-----" + line
+
 			line_number = line_number + 1
 			for key in synon.keys():
 				line_number_key = "Line " + str(line_number)
 				para_number_key = "Para " + str(para_number)
-				if key in line:
-					occurence = line.count(key)
+				words = []
+				words_with_special_character = line.split()
+				for word in words_with_special_character:
+					words.append("".join(e for e in word if e.isalnum()))
+				print words
+				if key in words:
+					occurence = words.count(key)
 					if key not in result.keys():
 						result[key] = {line_number_key : occurence, para_number_key : occurence, "total" : occurence}
 					else:
@@ -58,11 +62,10 @@ for para in paras:
 							result[key][para_number_key] = 0
 						result[key][line_number_key] += occurence
 						result[key][para_number_key] += occurence
-						result[key]["total"] += occurenceoccurence
+						result[key]["total"] += occurence
 				for synon_word in synon[key]:
-					if synon_word in line:
-						occurence = line.count(synon_word)
-						print "occurence----" + str(occurence) 
+					if synon_word in words:
+						occurence = words.count(synon_word)
 						if key not in result.keys():
 							result[key] = {line_number_key : occurence, para_number_key : occurence, "total" : occurence}
 						else:
@@ -74,11 +77,6 @@ for para in paras:
 							result[key][para_number_key] += occurence
 							result[key]["total"] += occurence
 
-print synon
-
-print anton
-
-print input_data
 
 
 print result

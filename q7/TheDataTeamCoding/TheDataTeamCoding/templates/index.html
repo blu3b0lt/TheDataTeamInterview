@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Data Team Q7</title>
+</head>
+<body>
+<form action="process" method="post">
+    {% csrf_token %}
+    <label>Enter Dictionary Mapping as Python Dictonary format</label>
+    <textarea name="dictonary">{"madras" : ["chennai"]}</textarea>
+    <p></p>
+    <label>Input Text:</label>
+    <textarea name="input"></textarea>
+    <input type="submit" value="Evaluate">
+</form>
+</body>
+</html>

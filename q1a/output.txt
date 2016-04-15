@@ -1,6 +1,6 @@
 madras
-Line 1 : 3
+Line 1 : 2
 Line 2 : 1
-Para 1 : 3
+Para 1 : 2
 Para 2 : 1
-Total Per File: 4
+Total Per File: 3
