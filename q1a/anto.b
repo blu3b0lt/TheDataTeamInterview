@@ -1,0 +1,9 @@
+(dp0
+S'hard'
+p1
+(lp2
+S'soft'
+p3
+aS'easy'
+p4
+as.
